@@ -35,13 +35,66 @@ With my notation I'd represent this as...
 
 ```mermaid
 flowchart TD
-  age["`
+  age["
   Age
-  granularity: individual
-  data source: `rethinking::bangladesh`
-  formula: none
-  `"
+  granularity: {individual}
+  formula: NA (Not Modelled)
+  data source: rethinking::bangladesh
+  "]
+  kids["
+  Number of Kids
+  granularity: {individual}
+  formula: NA (Not Modelled)
+  data source: rethinking::bangladesh 
+  "
   ]
+  district["
+  District
+  granularity: {individual}
+  formula: did <- as.integer( as.factor(d$district) )
+  data source: rethinking::bangladesh 
+  "]
+  urban["
+  Urban
+  granularity: {district}
+  formula: urban = d$urban
+  data source: rethinking::bangladesh
+  "]
+  correlated_effects["
+  District Level Parameters (correlated)
+  granularity: {district}
+  formula: <alpha,beta> ~ MVNormal(<a,b>, R, <sigma,tau>)
+  data source: None. Estimated.
+  "]
+  district_effect["
+  District Effect
+  granularity: {district}
+  formula: alpha
+  data source: None. Estimated.
+
+  "]
+  urban_effect["
+    Log Odds impact of urbanness
+    granularity: {district}
+    formula: beta * urban 
+    data source: None. Estimated.
+  "]
+  contraception["
+    Contraception Use
+    granularity: {individual}
+    formula: p[individual] <- sigmoid(district_effect[district[individual] + urban_effect[district[individual]))
+    data source: rethinking::bangladesh
+  "]
+
+  age -> contraception
+  kids -> contraception
+  urban -> urban_effect -> contraception
+  district -> district_effect -> contraception
+  correlated_effects -> urban_effect
+  correlated_effects -> district_effect
+  
+
+  
   
   
 
