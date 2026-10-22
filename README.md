@@ -84,12 +84,12 @@ flowchart TD
     data source: rethinking::bangladesh
   "]
 
-  age -> contraception
-  kids -> contraception
-  urban -> urban_effect -> contraception
-  district -> district_effect -> contraception
-  correlated_effects -> urban_effect
-  correlated_effects -> district_effect
+  age --> contraception
+  kids --> contraception
+  urban --> urban_effect --> contraception
+  district --> district_effect --> contraception
+  correlated_effects --> urban_effect
+  correlated_effects --> district_effect
   
 
   
