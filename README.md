@@ -62,7 +62,7 @@ flowchart TD
   correlated_effects["
   District Level Parameters (correlated)
   granularity: {district}
-  formula: <alpha,beta> ~ MVNormal([a,b], R, [sigma,tau])
+  formula: [alpha,beta] ~ MVNormal([a,b], R, [sigma,tau])
   data source: None. Estimated.
   "]
   district_effect["
@@ -80,7 +80,7 @@ flowchart TD
   contraception["
     Contraception Use
     granularity: {individual}
-    formula: p(individual) <- sigmoid(district_effect(district(individual)) + urban_effect(district(individual)))
+    formula: p(individual) <- sigmoid(district_effect[district[individual]] + urban_effect[district[individual]])
     data source: rethinking::bangladesh
   "]
 
