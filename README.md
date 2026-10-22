@@ -38,7 +38,7 @@ flowchart TD
   age["
   Age
   granularity: individual
-  data source: rethinking::bangladesh
+  data source: `rethinking::bangladesh`
   formula: none
   "
   ]
