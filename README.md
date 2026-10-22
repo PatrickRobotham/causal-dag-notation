@@ -70,7 +70,6 @@ flowchart TD
   granularity: {district}
   formula: alpha
   data source: None. Estimated.
-
   "]
   urban_effect["
     Log Odds impact of urbanness
@@ -81,7 +80,7 @@ flowchart TD
   contraception["
     Contraception Use
     granularity: {individual}
-    formula: p[individual] <- sigmoid(district_effect[district[individual] + urban_effect[district[individual]))
+    formula: p(individual) <- sigmoid(district_effect(district(individual)) + urban_effect(district(individual)))
     data source: rethinking::bangladesh
   "]
 
