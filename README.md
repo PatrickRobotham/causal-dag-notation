@@ -90,11 +90,10 @@ flowchart TD
   district --> district_effect --> contraception
   correlated_effects --> urban_effect
   correlated_effects --> district_effect
-  
-
-  
-  
-  
-
-
 ```
+
+## Roadmap
+
+[ ] Create more documentation/examples
+[ ] Create an FAQ
+[ ] Create a mermaid extension.
