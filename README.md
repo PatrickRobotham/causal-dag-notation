@@ -35,12 +35,12 @@ With my notation I'd represent this as...
 
 ```mermaid
 flowchart TD
-  age["
+  age["`
   Age
   granularity: individual
   data source: `rethinking::bangladesh`
   formula: none
-  "
+  `"
   ]
   
   
