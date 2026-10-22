@@ -16,9 +16,12 @@ This notation is intended to provide these extra pieces of metadata, so that it'
 
 ## Example
 
-Consider the model in [Statistical Rethinking 2024](https://github.com/rmcelreath/stat_rethinking_2024/blob/main/slides/Lecture_14-GLMM3.pdf)
+Consider the bangladesh model in [Statistical Rethinking 2024](https://github.com/rmcelreath/stat_rethinking_2024/blob/main/slides/Lecture_14-GLMM3.pdf)
 
 <img width="2000" height="1125" alt="image" src="https://github.com/user-attachments/assets/1f59e9a5-4139-468e-a707-4f88ffdcd85d" />
+
+[Homework](https://akawiecki.github.io/statistical_rethinking_inla/rethinkingINLA_HW9.html) for the full model with all 3 estimands.
+
 
 The Dag does not capture:
 1. The granularity of each node,
@@ -32,6 +35,14 @@ With my notation I'd represent this as...
 
 ```mermaid
 flowchart TD
+  age["
+  Age
+  granularity: individual
+  data source: rethinking::bangladesh
+  formula: none
+  ]
+  
+  
 
 
 ```
