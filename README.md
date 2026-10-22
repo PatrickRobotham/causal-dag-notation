@@ -46,8 +46,7 @@ flowchart TD
   granularity: {individual}
   formula: NA (Not Modelled)
   data source: rethinking::bangladesh 
-  "
-  ]
+  "]
   district["
   District
   granularity: {individual}
