@@ -62,7 +62,7 @@ flowchart TD
   correlated_effects["
   District Level Parameters (correlated)
   granularity: {district}
-  formula: <alpha,beta> ~ MVNormal(<a,b>, R, <sigma,tau>)
+  formula: <alpha,beta> ~ MVNormal([a,b], R, [sigma,tau])
   data source: None. Estimated.
   "]
   district_effect["
